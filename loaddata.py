@@ -19,7 +19,7 @@ elif user_name == 'Runi':
     directory = r'D:\Sapientia\Dropbox\Fysik på KU\Big Data Analysis\Final Project'
     os.chdir(directory)
 elif user_name == 'Marcus':
-    directory = r'\Github'
+    directory = r'C:\Users\Marcus96\Documents\GitHub\finalprojectMarcus'
     os.chdir(directory)
 
 def loaddata(directory):
