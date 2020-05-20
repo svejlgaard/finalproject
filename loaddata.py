@@ -14,10 +14,13 @@ if user_name == 'Simone':
     print('Welcome, master!')
 elif user_name == 'Jonathan':
     directory = r'C:\Users\jonat\Documents\GitHub\finalproject'
+    os.chdir(directory)
 elif user_name == 'Runi':
     directory = r'D:\Sapientia\Dropbox\Fysik på KU\Big Data Analysis\Final Project'
+    os.chdir(directory)
 elif user_name == 'Marcus':
     directory = r'\Github'
+    os.chdir(directory)
 
 def loaddata(directory):
         for filename in os.listdir(directory):
