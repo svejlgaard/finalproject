@@ -5,6 +5,7 @@ import os, contextlib, sys
 # Sets the directory to the current directory
 os.chdir(sys.path[0])
 
+
 data_dict = dict()
 
 user_name = input('What is your name? [Simone/Jonathan/Marcus/Runi]')
@@ -12,11 +13,11 @@ user_name = input('What is your name? [Simone/Jonathan/Marcus/Runi]')
 if user_name == 'Simone':
     print('Welcome, master!')
 elif user_name == 'Jonathan':
-    directory = 'C:\Users\jonat\Documents\GitHub\finalproject'
+    directory = r'\Users\jonat\Documents\GitHub\finalproject'
 elif user_name == 'Runi':
-    directory = 'D:\Sapientia\Dropbox\Fysik på KU\Big Data Analysis\Final Project'
+    directory = r'\Sapientia\Dropbox\Fysik på KU\Big Data Analysis\Final Project'
 elif user_name == 'Marcus':
-    user_name == 
+    directory = r'\Github'
 
 def loaddata(directory):
         for filename in os.listdir(directory):
@@ -26,3 +27,5 @@ def loaddata(directory):
             data_dict.update({f'{date}_data': data_matrix})
             data_dict.update({f'{date}_features': list(raw_data.dtype.names)})
 loaddata('data')
+
+print(data_dict)
