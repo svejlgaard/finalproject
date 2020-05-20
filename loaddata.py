@@ -13,9 +13,9 @@ user_name = input('What is your name? [Simone/Jonathan/Marcus/Runi]')
 if user_name == 'Simone':
     print('Welcome, master!')
 elif user_name == 'Jonathan':
-    directory = r'\Users\jonat\Documents\GitHub\finalproject'
+    directory = r'C:\Users\jonat\Documents\GitHub\finalproject'
 elif user_name == 'Runi':
-    directory = r'\Sapientia\Dropbox\Fysik på KU\Big Data Analysis\Final Project'
+    directory = r'D:\Sapientia\Dropbox\Fysik på KU\Big Data Analysis\Final Project'
 elif user_name == 'Marcus':
     directory = r'\Github'
 
