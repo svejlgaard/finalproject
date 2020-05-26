@@ -12,6 +12,7 @@ from bayes_opt import BayesianOptimization
 # Sets the directory to the current directory
 os.chdir(sys.path[0])
 
+np.random.seed(seed=1)
 
 def loaddata(directory):
     feature_list = list()
@@ -130,7 +131,7 @@ def optimize_NN(data, targets, pars, n_iter=10):
 
     return optimizer
 
-parameters_BO = {"hiddensize": (10,300), "learning_rate": (0.1,0.001),"layers": (1,4)}
+parameters_BO = {"hiddensize": (300,500), "learning_rate": (0.01,0.0001),"layers": (2,5)}
 
 optimization_data = train_data_torch[1]
 optimization_target = train_target_torch[1]
@@ -180,6 +181,9 @@ for e in range(n_epochs):
         loss.backward()
         optimizer.step()
     print(e, np.mean(epoch_losses),np.mean(epoch_evs))
+
+plt.plot(np.arange(0,n_epochs+1,step=1),epoch_evs)
+plt.show()
 
 with torch.no_grad():
     for i, traindata in enumerate(train_data_torch):
