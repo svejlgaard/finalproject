@@ -38,16 +38,17 @@ def get_julian_datetime(date):
 
 directory = 'extended_data'
 
+data_dict = dict()
+
 for filename in os.listdir(directory):
     data = np.genfromtxt(f'{directory}/{filename}',delimiter=',',skip_header=1,dtype=str)
     final_data = np.genfromtxt(f'{directory}/{filename}',delimiter=',',skip_header=1,dtype=float)
-    if 'build' in filename:
-        time_list = list(data[:,0].copy())
-        time_list = [datetime.datetime(int(i.strip('"').split("-")[0]),
-                    int(i.split("-")[1]),
-                    int(i.split("-")[2].split(" ")[0]),
-                    int(i.split("-")[2].split(" ")[1].split(":")[0]),
-                    int(i.split("-")[2].split(" ")[1].split(":")[1]),
-                    int(i.strip('"').split("-")[2].split(" ")[1].split(":")[2])) for i in time_list]
-        final_data[:,0] = [get_julian_datetime(i) for i in time_list]
-
+    time_list = list(data[:,0].copy())
+    time_list = [datetime.datetime(int(i.strip('"').split("-")[0]),
+                int(i.split("-")[1]),
+                int(i.split("-")[2].split(" ")[0]),
+                int(i.split("-")[2].split(" ")[1].split(":")[0]),
+                int(i.split("-")[2].split(" ")[1].split(":")[1]),
+                int(i.strip('"').split("-")[2].split(" ")[1].split(":")[2])) for i in time_list]
+    final_data[:,0] = [get_julian_datetime(i) for i in time_list]
+    data_dict.update({f'data_{filename.split("_")[0]}_{filename.split("_")[3]}': final_data})
