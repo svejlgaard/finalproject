@@ -8,9 +8,9 @@ os.chdir(sys.path[0])
 
 data_dict = dict()
 
-#user_name = input('What is your name? [Simone/Jonathan/Marcus/Runi]')
+user_name = input('What is your name? [Simone/Jonathan/Marcus/Runi]')
 
-user_name = 'Simone'
+#user_name = 'Simone'
 
 if user_name == 'Simone':
     print('Welcome, master!')
