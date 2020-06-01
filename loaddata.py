@@ -25,7 +25,7 @@ elif user_name == 'Marcus':
     os.chdir(directory)
 
 def loaddata(directory):
-        data_dict = dict()
+        #data_dict = dict()
         for filename in os.listdir(directory):
             raw_data = np.genfromtxt(f'{directory}/{filename}', delimiter=',', names=True)
             data_matrix = np.genfromtxt(f'{directory}/{filename}', delimiter=',')
