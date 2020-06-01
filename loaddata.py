@@ -32,3 +32,5 @@ def loaddata(directory):
             date = filename.split(sep='_')[2]
             data_dict.update({f'{date}_data': data_matrix})
             data_dict.update({f'{date}_features': list(raw_data.dtype.names)})
+
+loaddata('data')
