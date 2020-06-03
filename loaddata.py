@@ -10,6 +10,8 @@ data_dict = dict()
 
 user_name = input('What is your name? [Simone/Jonathan/Marcus/Runi]')
 
+#user_name = 'Simone'
+
 if user_name == 'Simone':
     print('Welcome, master!')
 elif user_name == 'Jonathan':
@@ -23,10 +25,12 @@ elif user_name == 'Marcus':
     os.chdir(directory)
 
 def loaddata(directory):
+        #data_dict = dict()
         for filename in os.listdir(directory):
             raw_data = np.genfromtxt(f'{directory}/{filename}', delimiter=',', names=True)
             data_matrix = np.genfromtxt(f'{directory}/{filename}', delimiter=',')
             date = filename.split(sep='_')[2]
             data_dict.update({f'{date}_data': data_matrix})
             data_dict.update({f'{date}_features': list(raw_data.dtype.names)})
+
 loaddata('data')
