@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import os, contextlib, sys
-from loaddata import loaddata
 import datetime
 import math
 
@@ -51,4 +50,5 @@ for filename in os.listdir(directory):
                 int(i.split("-")[2].split(" ")[1].split(":")[1]),
                 int(i.strip('"').split("-")[2].split(" ")[1].split(":")[2])) for i in time_list]
     final_data[:,0] = [get_julian_datetime(i) for i in time_list]
-    data_dict.update({f'data_{filename.split("_")[0]}_{filename.split("_")[3]}': final_data})
+    np.savetxt(f'{directory}/{filename.split("_")[0]}.txtz',final_data)
+    #data_dict.update({f'data_{filename.split("_")[0]}_{filename.split("_")[3]}': final_data})
