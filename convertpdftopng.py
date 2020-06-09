@@ -8,7 +8,7 @@ Created on Sun Jun  7 14:58:35 2020
 import os
 from pdf2image import convert_from_path
 
-pdf_dir = r"D:\Sapientia\Dropbox\Fysik på KU\Big Data Analysis\Final Project\plots"
+pdf_dir = r"D:\Sapientia\Dropbox\Fysik på KU\Big Data Analysis\Final Project\plots Runi"
 os.chdir(pdf_dir)
 
 for pdf_file in os.listdir(pdf_dir):
